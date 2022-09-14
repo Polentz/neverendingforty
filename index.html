@@ -12,11 +12,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body onload="history.scrollRestoration = 'manual'">
     <section id="page-1" class="intro">
         <p>Benvenuto nel tuo regalo di compleanno</p>
         <h1>Auguri!</h1>
-        <!-- AGGIUNGERE GIF TI TORTA O CUORI -->
+        <img class="gif" src="assets/1103-confetti-lineal.gif">
         <a class="arrow-down js-href" href="#page-2">
             <svg viewBox="0 0 22 33" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1 17L11 32L21 17" stroke="black" />
@@ -59,7 +59,7 @@
                 <img src="assets/488-bicycle-lineal.gif">
             </div>
         </div>
-        <a class="arrow-down js-href" href="#page-4">
+        <a id="arrow--bike" class="arrow-down js-href hidden" href="#page-4">
             <svg viewBox="0 0 22 33" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1 17L11 32L21 17" stroke="black" />
                 <path d="M11 32L11 -2.38419e-07" stroke="black" />
@@ -69,8 +69,12 @@
 
     <section id="page-4">
         <p>Secondo indizio:<br>alza il volume, ascolta e indovina</p>
-        <img class="gif" src="assets/784-trumpet-lineal.gif">
-        <a class="arrow-down js-href" href="#page-5">
+        <img id="click--audio" class="gif" src="assets/784-trumpet-lineal.gif">
+        <audio id="audio">
+            <source src="assets/nove.mp3" type="audio/mpeg">
+            <source src="assets/nove.ogg" type="audio/mpeg">
+        </audio>
+        <a id="arrow--audio" class="arrow-down js-href hidden" href="#page-5">
             <svg viewBox="0 0 22 33" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1 17L11 32L21 17" stroke="black" />
                 <path d="M11 32L11 -2.38419e-07" stroke="black" />
@@ -118,15 +122,14 @@
     <section id="page-6">
         <p>Hai raccolto tutti gli indizi!</p>
         <h1><a class="js-href" href="#page-7">Clicca qui</a></h1>
-        <p>Per scoprire sei hai indovinato</p>
+        <p>Per scoprire se hai indovinato il tuo regalo</p>
     </section>
 
     <section id="page-7">
         <p>Parteciperai alla</p>
         <h1>NOVE COLLI</h1>
         <p>52<sup>a</sup> edizione</p>
-        <iframe src="https://giphy.com/embed/FJaKqj9YG8cw6FeW8b" width="411" height="480" frameBorder="0"
-            class="giphy-embed" allowFullScreen></iframe>
+        <img style="filter: grayscale(1); mix-blend-mode: multiply; opacity: .5;" src="assets/logo-novecolli.png">
         <a class="arrow-down js-href" href="#page-8">
             <svg viewBox="0 0 22 33" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1 17L11 32L21 17" stroke="black" />
@@ -136,11 +139,11 @@
     </section>
 
     <section id="page-8">
-        <p>21 maggio 2023</p>
+        <p style="color: #30c9e8;">21 maggio 2023</p>
         <div class="countdown">
             <p id="countdown"></p>
         </div>
-        <small style="margin-bottom: 1rem;">C'è da aspettare,<br>Lo so che la pazienza non è il tuo forte</small>
+        <small style="margin: 1rem 0;">C'è da aspettare,<br>lo so che la pazienza non è il tuo forte</small>
         <p>intanto alcune anticipazioni:</p>
         <a class="arrow-down js-href" href="#page-9">
             <svg viewBox="0 0 22 33" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -188,7 +191,7 @@
             <img src="assets/cozze.jpg">
             <img src="assets/tagliatelle.jpg">
         </div>
-        <a class="arrow-down js-href" href="#page-11">
+        <a class="arrow-down js-href" href="#page-12">
             <svg viewBox="0 0 22 33" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1 17L11 32L21 17" stroke="white" />
                 <path d="M11 32L11 -2.38419e-07" stroke="white" />
@@ -196,72 +199,51 @@
         </a>
     </section>
 
+    <section id="page-12">
+        <p>nel frattempo<br>buon allenamento</p>
+        <div class="marquee show" style="margin: 3rem 0;">
+            <div>
+                <img src="assets/901-tricycle-lineal.gif">
+                <img src="assets/901-tricycle-lineal.gif">
+                <img src="assets/901-tricycle-lineal.gif">
+                <img src="assets/901-tricycle-lineal.gif">
+                <img src="assets/901-tricycle-lineal.gif">
+                <img src="assets/901-tricycle-lineal.gif">
+                <img src="assets/901-tricycle-lineal.gif">
+                <img src="assets/901-tricycle-lineal.gif">
+                <img src="assets/901-tricycle-lineal.gif">
+                <img src="assets/901-tricycle-lineal.gif">
+                <img src="assets/901-tricycle-lineal.gif">
+                <img src="assets/901-tricycle-lineal.gif">
+                <img src="assets/901-tricycle-lineal.gif">
+                <img src="assets/901-tricycle-lineal.gif">
+                <img src="assets/901-tricycle-lineal.gif">
+                <img src="assets/901-tricycle-lineal.gif">
+            </div>
+        </div>
+        <p>e soprattutto</p>
+        <a class="arrow-down js-href" href="#page-13">
+            <svg viewBox="0 0 22 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 17L11 32L21 17" stroke="black" />
+                <path d="M11 32L11 -2.38419e-07" stroke="black" />
+            </svg>
+        </a>
+    </section>
 
-    <script>
-        const documentHeight = () => {
-            const doc = document.documentElement
-            doc.style.setProperty("--doc-height", `${window.innerHeight}px`)
-        }
-        window.addEventListener("resize", documentHeight)
-        documentHeight();
+    <section id="page-13">
+        <h1>TANTI AUGURI AMORE</h1>
+        <img class="gif" src="assets/20-love-heart-lineal.gif">
+        <small style="margin-top: 1rem;">PS vediamo se stavolta faccio annullare anche questa gara 🙃</small>
+    </section>
 
-        const scrollTo = (anchorTags) => {
-            document.querySelectorAll(anchorTags).forEach(link => {
-                link.addEventListener("click", (event) => {
-                    event.preventDefault();
-                    const href = link.getAttribute("href");
-                    document.querySelector(href).scrollIntoView({
-                        behavior: "smooth"
-                    });
-                });
-            });
-        }
-        scrollTo(".js-href");
+    <div class="vertical">
+        <a class="js-href" href="#page-1">torna su</a>
+    </div>
+    <div class="vertical">
+        <a href="index.html">ricomincia</a>
+    </div>
 
-        const clickMe = (trigger, element, style) => {
-            document.getElementById(trigger).addEventListener("click", () => {
-                document.getElementById(element).classList.add(style);
-            })
-        }
-        clickMe("click--bike", "bike", "show");
-
-        const countDownDate = new Date("May 21, 2023").getTime();
-        setInterval(() => {
-            const now = new Date().getTime();
-            const distance = countDownDate - now;
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById("countdown").innerHTML = days + " giorni<br>" + hours + " ore<br>"
-                + minutes + " minuti<br>" + seconds + " secondi";
-
-            if (distance < 0) {
-                clearInterval();
-                document.getElementById("countdown").innerHTML = "READY TO GO!";
-            }
-        }, 1000);
-
-        const inputConfetti = (box, confetti, style, active) => {
-            const input = document.getElementById(box);
-            input.addEventListener("keyup", () => {
-                console.log(input)
-                if (input.dataset.letter === input.value) {
-                    document.getElementById(confetti).classList.add(style);
-                    input.style.background = "#91bce2";
-                } else {
-                    input.style.background = "#f44f4f"
-                }
-            })
-        }
-        inputConfetti("c", "input-confetti-c", "show");
-        inputConfetti("o", "input-confetti-o", "show");
-        inputConfetti("l-1", "input-confetti-l-1", "show");
-        inputConfetti("l-2", "input-confetti-l-2", "show");
-        inputConfetti("i", "input-confetti-i", "show");
-    </script>
+    <script src="script.js"></script>
 </body>
 
 
