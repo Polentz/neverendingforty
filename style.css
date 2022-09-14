@@ -320,3 +320,11 @@ input:valid {
 #page-13 small {
     justify-self: end;
 }
+
+@media screen and (min-width: 600px) {
+
+    section,
+    div {
+        display: none;
+    }
+}
