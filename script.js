@@ -45,7 +45,7 @@ const inputConfetti = (box, confetti, style, active) => {
     const input = document.getElementById(box);
     input.addEventListener("keyup", () => {
         console.log(input)
-        if (input.dataset.letter === input.value) {
+        if (input.dataset.letter.toUpperCase() === input.value.toUpperCase()) {
             document.getElementById(confetti).classList.add(style);
             input.style.background = "#30c9e8";
         } else {
