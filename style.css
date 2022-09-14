@@ -71,7 +71,7 @@ html {
 }
 
 body {
-    width: 100vw;
+    width: 100%;
     height: var(--doc-height);
     overflow: hidden;
     font-family: 'Figtree', sans-serif;
@@ -79,6 +79,7 @@ body {
     line-height: 1.2;
     text-align: center;
     scroll-behavior: smooth;
+    position: relative;
 }
 
 :root {
@@ -130,7 +131,8 @@ sup {
     text-transform: lowercase;
 }
 
-.vertical {
+.vertical-right,
+.vertical-left {
     position: fixed;
     top: 50%;
     -webkit-transform: translate(0, -50%);
@@ -140,15 +142,16 @@ sup {
 
 }
 
-.vertical.-right {
+.vertical-right {
     right: 0;
 }
 
-.vertical.-left {
+.vertical-left {
     left: 0;
 }
 
-.vertical a {
+.vertical-right a,
+.vertical-left a {
     white-space: nowrap;
     -webkit-writing-mode: vertical-lr;
     -ms-writing-mode: tb-lr;
