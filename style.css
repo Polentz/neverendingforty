@@ -66,12 +66,17 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+:root {
+    --doc-height: 100%;
+    --doc-width: 100%;
+}
+
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    width: 100vw;
+    width: var(--doc-width);
     height: var(--doc-height);
     overflow: hidden;
     font-family: 'Figtree', sans-serif;
@@ -82,12 +87,8 @@ body {
     position: relative;
 }
 
-:root {
-    --doc-height: 100%;
-}
-
 section {
-    width: 100%;
+    width: var(--doc-width);
     min-height: var(--doc-height);
     position: relative;
     display: -webkit-box;
@@ -229,7 +230,7 @@ iframe.show,
     opacity: 0;
     position: relative;
     left: 0;
-    width: 100vw;
+    width: var(--doc-width);
     overflow: hidden;
 }
 
@@ -381,6 +382,9 @@ input:valid {
 }
 
 @media screen and (min-width: 600px) {
+    body {
+        width: var(--doc-width);
+    }
 
     section,
     div {
