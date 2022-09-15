@@ -71,7 +71,7 @@ html {
 }
 
 body {
-    width: 100%;
+    width: 100vw;
     height: var(--doc-height);
     overflow: hidden;
     font-family: 'Figtree', sans-serif;
@@ -87,7 +87,7 @@ body {
 }
 
 section {
-    width: 100vw;
+    width: 100%;
     min-height: var(--doc-height);
     position: relative;
     display: -webkit-box;
@@ -152,6 +152,7 @@ sup {
 
 .vertical-right a,
 .vertical-left a {
+    display: block;
     white-space: nowrap;
     -webkit-writing-mode: vertical-lr;
     -ms-writing-mode: tb-lr;

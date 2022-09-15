@@ -1,8 +1,8 @@
 const documentHeight = () => {
     const doc = document.documentElement
     doc.style.setProperty("--doc-height", `${window.innerHeight}px`)
-}
-window.addEventListener("resize", documentHeight)
+};
+window.addEventListener("resize", documentHeight);
 documentHeight();
 
 const scrollTo = (anchorTags) => {
@@ -15,7 +15,7 @@ const scrollTo = (anchorTags) => {
             });
         });
     });
-}
+};
 scrollTo(".js-href");
 
 const clickMe = (trigger, element, ui, style) => {
@@ -23,7 +23,7 @@ const clickMe = (trigger, element, ui, style) => {
         document.getElementById(element).classList.add(style);
         document.getElementById(ui).classList.add(style);
     })
-}
+};
 clickMe("click--bike", "bike", "arrow--bike", "show");
 
 const playAudio = (button, element, ui, style) => {
@@ -38,13 +38,12 @@ const playAudio = (button, element, ui, style) => {
             audio.pause();
     });
 
-}
+};
 playAudio("click--audio", "audio", "arrow--audio", "show");
 
 const inputConfetti = (box, confetti, style, active) => {
     const input = document.getElementById(box);
     input.addEventListener("keyup", () => {
-        console.log(input)
         if (input.dataset.letter.toUpperCase() === input.value.toUpperCase()) {
             document.getElementById(confetti).classList.add(style);
             input.style.background = "#30c9e8";
@@ -52,7 +51,7 @@ const inputConfetti = (box, confetti, style, active) => {
             input.style.background = "#f44f4f"
         }
     })
-}
+};
 inputConfetti("c", "input-confetti-c", "show");
 inputConfetti("o", "input-confetti-o", "show");
 inputConfetti("l-1", "input-confetti-l-1", "show");
@@ -77,4 +76,9 @@ setInterval(() => {
         document.getElementById("countdown").innerHTML = "READY TO GO!";
     }
 }, 1000);
+
+const toTop = document.querySelector(".to-top");
+toTop.addEventListener("click", () => {
+    window.scrollTo(0, 0);
+});
 
