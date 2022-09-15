@@ -132,27 +132,20 @@ sup {
     text-transform: lowercase;
 }
 
-.vertical-right,
 .vertical-left {
     position: fixed;
-    bottom: 10%;
-    /* top: 50%;
+    top: 50%;
     -webkit-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
-    transform: translate(0, -50%); */
+    transform: translate(0, -50%);
     z-index: 999;
 
-}
-
-.vertical-right {
-    right: 0;
 }
 
 .vertical-left {
     left: 0;
 }
 
-.vertical-right a,
 .vertical-left a {
     display: block;
     white-space: nowrap;
@@ -161,6 +154,10 @@ sup {
     writing-mode: vertical-lr;
     font-size: .8rem;
     text-transform: uppercase;
+}
+
+.vertical-left span {
+    margin: 2rem 0;
 }
 
 .arrow-down {
